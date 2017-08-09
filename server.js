@@ -35,7 +35,7 @@ var articles= {
 'article-three': {
          title:'Article Three|Lintu Liz Thomas',
          heading:'Article Three',
-         date:'Sep 10,2016',
+         date:'Sep 15,2016',
          content:`
                 <p>
                 This is the content of my third article.
