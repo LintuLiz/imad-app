@@ -120,7 +120,9 @@ app.post('/create-user',function(req,res){
             res.status(500).send(err.toString());
         } 
         else{
-            res.send('User successfully added'+username);
+          //  res.send('User successfully added'+username);
+          res.setHeader('Content-Type', 'application/json');
+          res.send(JSON.parse('{"message":"User successfully added"+username}'));
         }    
    });
 });
