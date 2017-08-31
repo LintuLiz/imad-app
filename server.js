@@ -202,7 +202,7 @@ app.get('/submit-name',function(req,res){// /submit-name?name=xxx
     res.send(JSON.stringify(names));
 });
 
-app.get('/articles/:articleName',function(req,res){
+app.get('/get-articles',function(req,res){
     //articleName==article-one
     //articles[articleName]==content object for article-one
     pool.query("SELECT * FROM article WHERE title=$1"+[req.params.articleName],function(err,result){
