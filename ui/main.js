@@ -86,7 +86,7 @@ function loadLoggedInUser()
 function loadLogin(){
     var request=new XMLHTTPRequest();
     request.onreadystatechange=function(){
-        if(request.readyState===XMLHTTPReqeust.DONE){
+        if(request.readyState===XMLHTTPRequest.DONE){
             if(request.status===200){
                 loadLoggedInUser(this.responseText);
             }else{
