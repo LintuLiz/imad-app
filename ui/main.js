@@ -6,7 +6,7 @@ function loadLoginForm()
     <input type="password" id="password" placeholder="*******"/>
     <input type="submit" value="Login" id="submit_btn"/>
     <input type="submit" value="Register" id="register_btn"/>
-    `
+    `;
     
     document.getElementById('login_area').innerHTML=loginHTML;
 //Submit username/password
