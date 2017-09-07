@@ -84,9 +84,9 @@ function loadLoggedInUser()
 }
 
 function loadLogin(){
-    var request=new XMLHTTPRequest();
+    var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
-        if(request.readyState===XMLHTTPRequest.DONE){
+        if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200){
                 loadLoggedInUser(this.responseText);
             }else{
@@ -99,9 +99,9 @@ function loadLogin(){
 }
 
 function loadArticles(){
-    var request=new XMLHTTPRequest();
+    var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
-      if(request.readystate===XMLHTTPRequest.DONE){
+      if(request.readystate===XMLHttpRequest.DONE){
           if(request.state===200){
               var content='<ul>';
               var articleData=json.parse(this.responseText);
