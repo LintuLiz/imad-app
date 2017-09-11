@@ -178,6 +178,7 @@ app.get('/check-login',function(req,res){
        res.status(400).send('You are not logged in');
    }
 });
+
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
     //make a select request
