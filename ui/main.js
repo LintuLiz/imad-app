@@ -122,7 +122,7 @@ request.open('GET', '/get-articles', true);
 request.send(null);
 }
 
-console.log('hwllo');
+//console.log('hwllo');
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 
