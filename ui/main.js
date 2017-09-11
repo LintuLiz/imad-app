@@ -74,7 +74,7 @@ register.onclick=function(){
 };
 }
 
-function loadLoggedInUser()
+function loadLoggedInUser(username)
 {
     var loginArea=document.getElementById('login_area');
     loginArea.innerHTML= `<h3> Hi <i>${username}</i></h3>
