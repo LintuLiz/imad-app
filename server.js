@@ -145,13 +145,13 @@ app.post('/login',function(req,res){
                 var hashedPassword=hash(password,salt);
                 if(hashedPassword===dbString){
                     req.session.auth={userId:result.rows[0].id};
-                // res.send('Credentials correct!');   
+             //    res.send('Credentials correct!');   
                  //set a session
-                 res.setHeader('Content-Type', 'application/json');
-                res.send(JSON.parse('{"message":"Credentials Correct"}'));
+               res.setHeader('Content-Type', 'application/json');
+               res.send(JSON.parse('{"message":"Credentials Correct"}'));
                  
                 }else{
-                    res.send(403).send('username/password is invalid');
+                    res.status(403).send('username/password is invalid');
                 }
                 
             }
@@ -180,8 +180,9 @@ app.get('/check-login',function(req,res){
    }
 });
 
-var pool=new Pool(config);
-app.get('/test-db',function(req,res){
+
+//var pool=new Pool(config);
+/*app.get('/test-db',function(req,res){
     //make a select request
     //return a response with the results
     pool.query('SELECT * FROM test',function(err,result){
@@ -192,7 +193,7 @@ app.get('/test-db',function(req,res){
             res.send(JSON.stringify(result.rows));
         }
     });
-});
+});*/
 
 var counter=0;
 app.get('/counter',function(req,res){
@@ -224,22 +225,21 @@ app.get('/get-articles', function (req, res) {
    });
 });
 
-app.get('/articles/:articleName',function(req,res){
-    //articleName==article-one
-    //articles[articleName]==content object for article-one
-    pool.query("SELECT * FROM article WHERE title=$1",[req.params.articleName],function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }else{
-            if(result.rows.length===0){
-                res.status(404).send('Article not found');
-            }else{
-                var articleData=result.rows[0];
-                 res.send(createTemplate(articleData));
-            }
-        } 
-    });
-   
+app.get('/articles/:articleName', function (req, res) {
+  // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
+  pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
+    if (err) {
+        res.status(500).send(err.toString());
+    } else {
+        if (result.rows.length === 0) {
+            res.status(404).send('Article not found');
+        }
+        else {
+            var articleData = result.rows[0];
+            res.send(createTemplate(articleData));
+       }
+    }
+  });
 });
 
 app.get('/ui/style.css', function (req, res) {
