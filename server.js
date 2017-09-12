@@ -120,9 +120,9 @@ app.post('/create-user',function(req,res){
             res.status(500).send(err.toString());
         } 
         else{
-          //  res.send('User successfully added'+username);
-          res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.parse('{"message":"User successfully added"}'));
+           res.send('User successfully added'+username);
+          //res.setHeader('Content-Type', 'application/json');
+          //res.send(JSON.parse('{"message":"User successfully added"}'));
         }    
    });
 });
@@ -145,10 +145,10 @@ app.post('/login',function(req,res){
                 var hashedPassword=hash(password,salt);
                 if(hashedPassword===dbString){
                     req.session.auth={userId:result.rows[0].id};
-             //    res.send('Credentials correct!');   
+                 res.send('Credentials correct!');   
                  //set a session
-               res.setHeader('Content-Type', 'application/json');
-               res.send(JSON.parse('{"message":"Credentials Correct"}'));
+             //  res.setHeader('Content-Type', 'application/json');
+               //res.send(JSON.parse('{"message":"Credentials Correct"}'));
                  
                 }else{
                     res.status(403).send('username/password is invalid');
@@ -251,7 +251,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
 
