@@ -99,6 +99,7 @@ function loadLogin(){
 }
 
 function loadArticles(){
+    console.log('loadArticles');
     var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
       if(request.readystate===XMLHttpRequest.DONE){
