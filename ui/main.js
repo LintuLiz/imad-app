@@ -106,7 +106,7 @@ function loadArticles(){
         
       if(request.readyState===XMLHttpRequest.DONE){
           var articles = document.getElementById('articles');
-          if(request.state===200){
+          if(request.status===200){
               console.log('loadArticles');
               var content='<ul>';
               var articleData=JSON.parse(this.responseText);
