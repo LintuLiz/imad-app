@@ -101,8 +101,7 @@ function loadLogin(){
 function loadArticles(){
     
     var request=new XMLHttpRequest();
-        request.open('GET', '/get-articles', true);
-         request.send(null);
+        
     request.onreadystatechange=function(){
         
       if(request.readyState===XMLHttpRequest.DONE){
@@ -124,7 +123,8 @@ function loadArticles(){
 
       }  
     };
-
+        request.open('GET', '/get-articles', true);
+         request.send(null);
 }
 
 //console.log('hwllo');
