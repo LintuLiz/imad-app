@@ -102,11 +102,11 @@ function loadArticles(){
     
     var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
-        console.log('loadArticles');
+        
       if(request.readyState===XMLHttpRequest.DONE){
           
           if(request.state===200){
-              
+              console.log('loadArticles');
               var content='<ul>';
               var articleData=json.parse(this.responseText);
               for(var i=0;i<articleData.length;i++){
