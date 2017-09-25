@@ -99,10 +99,11 @@ function loadLogin(){
 }
 
 function loadArticles(){
-    console.log('loadArticles');
+    
     var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
       if(request.readystate===XMLHttpRequest.DONE){
+          console.log('loadArticles');
           if(request.state===200){
               
               var content='<ul>';
