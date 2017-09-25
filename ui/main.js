@@ -104,7 +104,7 @@ function loadArticles(){
     request.onreadystatechange=function(){
         
       if(request.readyState===XMLHttpRequest.DONE){
-          
+          var articles = document.getElementById('articles');
           if(request.state===200){
               console.log('loadArticles');
               var content='<ul>';
@@ -114,7 +114,7 @@ function loadArticles(){
                   <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
                   (${articleData[i].date.split('T')[0]})</li>`;
               }
-                content += "</ul>";
+                content += "</ul>"
                 articles.innerHTML = content;
           }else {
                 articles.innerHTML('Oops! Could not load all articles!')
