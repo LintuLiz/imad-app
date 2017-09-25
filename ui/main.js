@@ -108,7 +108,7 @@ function loadArticles(){
           if(request.state===200){
               console.log('loadArticles');
               var content='<ul>';
-              var articleData=json.parse(this.responseText);
+              var articleData=JSON.parse(this.responseText);
               for(var i=0;i<articleData.length;i++){
                   content+=`<li>
                   <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
