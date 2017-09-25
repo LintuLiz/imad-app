@@ -107,7 +107,6 @@ function loadArticles(){
       if(request.readyState===XMLHttpRequest.DONE){
           var articles = document.getElementById('articles');
           if(request.status===200){
-              console.log('loadArticles');
               var content='<ul>';
               var articleData=JSON.parse(this.responseText);
               for(var i=0;i<articleData.length;i++){
