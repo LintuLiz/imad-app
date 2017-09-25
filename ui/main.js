@@ -102,8 +102,9 @@ function loadArticles(){
     
     var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
+        console.log('loadArticles');
       if(request.readyState===XMLHttpRequest.DONE){
-          console.log('loadArticles');
+          
           if(request.state===200){
               
               var content='<ul>';
