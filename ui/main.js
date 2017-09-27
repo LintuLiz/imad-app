@@ -9,10 +9,10 @@ function loadLoginForm()
     `;
     
     document.getElementById('login_area').innerHTML=loginHTML;
-//Submit username/password
+    //Submit username/password
 
-var submit=document.getElementById('submit_btn');
-submit.onclick=function(){
+    var submit=document.getElementById('submit_btn');
+    submit.onclick=function(){
    
   //Create a request object
     var request=new XMLHttpRequest();
