@@ -99,8 +99,7 @@ function createTemplate(data){
             <script type="text/javascript" src="/ui/articles.js">
             </script>
         </body>
-        
-    </html>
+     </html>
 `;
 return htmlTemplate;
 }
