@@ -9,7 +9,7 @@ function loadCommentForm(){
      <br/>
      `;
      document.getElementById('comment_form').innerHTML=commentFormHtml;
-     console.log('comment');
+     
      //Submit username/password by login
      var submit=document.getElementById('submit');
      submit.onclick=function(){
