@@ -96,7 +96,7 @@ function createTemplate(data){
                 <center>Loading comments...</center>
               </div>
             </div>
-            <script type="text/javascript" src="/ui/articles.js"/>
+            <script type="text/javascript" src="/ui/article.js"/>
             
         </body>
      </html>
