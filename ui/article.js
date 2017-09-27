@@ -14,7 +14,7 @@ function loadCommentForm(){
      var submit=document.getElementById('submit');
      submit.onclick=function(){
          var request=new XMLHttpRequest();
-         
+       
          //Capture response and store it in a variable
          request.onreadystatechange=function(){
              if(request.readystate===XMLHttpRequest.DONE){
